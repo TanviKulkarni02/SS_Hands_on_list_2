@@ -1,4 +1,19 @@
 
+/*
+============================================================================
+Name : 4.c
+Author : Tanvi Kulkarni
+Description : 4. Write a program to measure how much time is taken to execute 100 getppid ( )
+system call. Use time stamp counter.
+Date: 17th Sept, 2024.
+============================================================================
+*/
+
+
+
+
+
+
 #include <stdio.h>
 #include <unistd.h>
 #include <sys/time.h>

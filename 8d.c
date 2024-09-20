@@ -1,3 +1,15 @@
+
+/*
+============================================================================
+Name : 8d.c
+Author : Tanvi Kulkarni
+Description : 8. Write a separate program using signal system call to catch the following signals.
+d. SIGALRM (use alarm system call)
+Date: 20th Sept, 2024.
+============================================================================
+*/
+
+
 #include <stdlib.h>
 #include <unistd.h>
 #include <signal.h>

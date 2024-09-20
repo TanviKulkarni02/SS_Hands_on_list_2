@@ -1,3 +1,17 @@
+/*
+============================================================================
+Name : 8a.c
+Author : Tanvi Kulkarni
+Description : 8. Write a separate program using signal system call to catch the following signals.
+a. SIGSEGV
+Date: 20th Sept, 2024.
+============================================================================
+*/
+
+
+
+
+
 #include <signal.h>
 #include <stdio.h>
 #include <unistd.h>

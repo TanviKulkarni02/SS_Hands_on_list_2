@@ -1,3 +1,19 @@
+/*
+============================================================================
+Name : 1a.c
+Author : Tanvi Kulkarni
+Description : 1. Write a separate program (for each time domain) to set a interval timer in 10sec and
+10micro second
+a. ITIMER_REAL
+Date: 12th Sept, 2024.
+============================================================================
+*/
+
+
+
+
+
+
 #include <stdio.h>
 #include <unistd.h>
 #include <sys/time.h>

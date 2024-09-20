@@ -1,3 +1,16 @@
+
+/*
+============================================================================
+Name : 33_server.c
+Author : Tanvi Kulkarni
+Description : 33. Write a program to communicate between two machines using socket.
+Date: 19th Sept, 2024.
+============================================================================
+*/
+
+
+
+
 #include <fcntl.h>
 #include <sys/stat.h>
 #include <unistd.h>

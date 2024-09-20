@@ -1,3 +1,18 @@
+/*
+============================================================================
+Name : 11c.c
+Author : Tanvi Kulkarni
+Description :  11. Write a program to ignore a SIGINT signal then reset the default action of the SIGINT signal -
+use sigaction system call.
+Date: 20th Sept, 2024.
+============================================================================
+*/
+
+
+
+
+
+
 #include <stdio.h>
 #include <unistd.h>
 #include <signal.h>

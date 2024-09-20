@@ -1,3 +1,16 @@
+
+/*
+============================================================================
+Name : 3.c
+Author : Tanvi Kulkarni
+Description : 3. Write a program to set (any one) system resource limit. Use setrlimit system call. 
+Date: 17th Sept, 2024.
+============================================================================
+*/
+
+
+
+
 #include <stdio.h>
 #include <unistd.h>
 #include <sys/resource.h>
