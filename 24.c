@@ -14,7 +14,7 @@ Date: 20th Sept, 2024.
 
 int main(){
 
-	key_t key=ftok("file_24",12);
+	int key=ftok(".",12);
 	if(key==-1){
 		perror("Error in generating the Key\n");
 		return 1;
@@ -39,8 +39,8 @@ int main(){
 ============================================================================
 Output:
 The Message Queue is created
-Key:
-Message Queue id:1
+Key:201730076
+Message Queue id:4
 
 ============================================================================
 */

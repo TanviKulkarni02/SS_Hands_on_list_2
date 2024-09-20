@@ -22,7 +22,7 @@ struct mg_info{
 
 int main(){
 
-        key_t key=ftok("file_26",12);
+        int key=ftok(".",12);
         if(key==-1){
                 perror("Error in generating the Key\n");
                 return 1;
@@ -36,12 +36,11 @@ int main(){
 
 
         if((msgrcv(msg_id,&my_msg,sizeof(my_msg.msg_text),1,IPC_NOWAIT))==-1){
-		
+
 		if (errno == ENOMSG)
 			printf("There is no message of type 1\n");
        		else 
             		perror("There is an error in receiving message\n");
-    		 
 		return 1;
         }
 

@@ -14,7 +14,7 @@ Date: 20th Sept, 2024.
 
 int main(){
 
-        key_t key=ftok("file_29",12);
+        int key=ftok(".",12);
         if(key==-1){
                 perror("Error in generating the Key\n");
                 return 1;

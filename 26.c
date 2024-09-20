@@ -19,7 +19,7 @@ struct mg_info{
 
 int main(){
 
-        key_t key=ftok("file_26",12);
+        int key=ftok(".",12);
         if(key==-1){
                 perror("Error in generating the Key\n");
                 return 1;
@@ -49,13 +49,12 @@ int main(){
 ============================================================================
 Output:
 Enter the message that you want to send through Message Queue
-This is Question 26
-
 ------ Message Queues --------
 key        msqid      owner      perms      used-bytes   messages    
-0xffffffff 0          bhavya     744        0            0           
-0x0c084825 1          bhavya     744        0            0           
-0x0c0841ac 2          bhavya     744        0            0           
-0x0c08484a 3          bhavya     744        100          2     
+0x0c06640e 1          tanvikulka 666        0            0           
+0x0c066662 2          tanvikulka 744        200          4           
+0x0c066664 3          tanvikulka 744        0            0 
+
+
 ============================================================================
 */

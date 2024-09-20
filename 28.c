@@ -16,7 +16,7 @@ int main(){
 
 	struct msqid_ds mq_info;
 
-        key_t key=ftok("file_28",12);
+        int key=ftok(".",12);
         if(key==-1){
                 perror("Error in generating the Key\n");
                 return 1;
@@ -52,7 +52,7 @@ int main(){
 /*
 ============================================================================
 Output:
-The current permissions of the message queue: 744
+The current permissions of the message queue: 666
 The New permissions of the message queue: 666
 
 ============================================================================

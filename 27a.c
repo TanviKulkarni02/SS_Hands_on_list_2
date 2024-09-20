@@ -2,7 +2,7 @@
 ============================================================================
 Name : 27a.c
 Author : Tanvi Kulkarni
-Description : 27. Write a program to receive messages from the message queue.
+Description : Write a program to receive messages from the message queue.
 a. with 0 as a flag 
 Date: 20th Sept, 2024.
 ============================================================================
@@ -20,7 +20,7 @@ struct mg_info{
 
 int main(){
 
-        key_t key=ftok("file_26",12);
+        int key=ftok(".",12);
         if(key==-1){
                 perror("Error in generating the Key\n");
                 return 1;
@@ -48,7 +48,7 @@ int main(){
 /*
 ============================================================================
 Output:
-The received message is: This is Question 26
+The received message is: hi i am tanvi
 
 ============================================================================
 */

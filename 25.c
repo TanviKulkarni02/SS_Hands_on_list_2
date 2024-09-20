@@ -25,7 +25,7 @@ int main(){
 
         struct msqid_ds mq_info;
 
-	key_t key=ftok("file_25",12);
+	int key=ftok(".",12);
         if(key==-1){
                 perror("Error in generating the Key\n");
                 return 1;
