@@ -1,3 +1,15 @@
+/*
+============================================================================
+Name : 32a.c
+Author : Tanvi Kulkarni
+Description : 32. Write a program to implement semaphore to protect any critical section.
+a. rewrite the ticket number creation program using semaphore
+Date: 21st Sept, 2024.
+============================================================================
+*/
+
+
+
 #include<stdio.h>
 #include<unistd.h>
 #include<sys/sem.h>

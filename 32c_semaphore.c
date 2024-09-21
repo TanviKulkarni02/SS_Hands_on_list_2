@@ -1,3 +1,17 @@
+/*
+============================================================================
+Name : 32c.c
+Author : Tanvi Kulkarni
+Description : 32. Write a program to implement semaphore to protect any critical section.
+c. protect multiple pseudo resources ( may be two) using counting semaphore
+Date: 21st Sept, 2024.
+============================================================================
+*/
+
+
+
+
+
 #include<stdio.h>
 #include<sys/sem.h>
 #include<unistd.h>

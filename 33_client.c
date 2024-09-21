@@ -34,7 +34,7 @@ sd = socket(AF_UNIX , SOCK_STREAM,0);
 
 serv.sin_family = AF_UNIX;
 serv.sin_addr.s_addr = INADDR_ANY;
-serv.sin_port = htons(5055);
+serv.sin_port = htons(5777);
 
 bind(sd, (void*)(&serv) , sizeof(serv));
 
@@ -45,4 +45,10 @@ printf("Message from server : %s\n",buff);
 
 return  0;
 }
+/*output -
 
+tanvikulkarni@tanvikulkarni-Vostro-14-5401:~/ss/hands-on-list-2$ ./33server
+Message from client : hello server
+
+
+*/

@@ -1,3 +1,16 @@
+
+/*
+============================================================================
+Name : 21_2nd.c
+Author : Tanvi Kulkarni
+Description : 21. Write two programs so that both can communicate by FIFO -Use two way communications.
+Date: 21st Sept, 2024.
+============================================================================
+*/
+
+
+
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>

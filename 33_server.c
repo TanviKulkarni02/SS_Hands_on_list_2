@@ -29,7 +29,7 @@ sd = socket(AF_UNIX , SOCK_STREAM, 0);
 
 serv.sin_family = AF_UNIX;
 serv.sin_addr.s_addr = INADDR_ANY;
-serv.sin_port = htons(5055);
+serv.sin_port = htons(5777);
 
 bind(sd,(void*)(&serv) , sizeof(serv));
 
@@ -42,3 +42,15 @@ write(nsd, "ACK from server\n",17);
 return 0;
 
 }
+
+/*
+---------------------------------
+---------------------------------
+output -
+
+tanvikulkarni@tanvikulkarni-Vostro-14-5401:~/ss/hands-on-list-2$ ./a.out
+Message from server : ACK from server
+
+------------------------------------
+-----------------------------------
+*/

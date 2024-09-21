@@ -1,3 +1,15 @@
+/*
+============================================================================
+Name : 30d.c
+Author : Tanvi Kulkarni
+Description : 30. Write a program to create a shared memory.
+d. remove the shared memory
+Date: 21st Sept, 2024.
+============================================================================
+*/
+
+
+
 #include<sys/shm.h>
 #include<unistd.h>
 #include<stdio.h>

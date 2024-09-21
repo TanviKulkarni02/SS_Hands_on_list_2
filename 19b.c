@@ -1,3 +1,19 @@
+
+/*
+============================================================================
+Name : 19b.c
+Author : Tanvi Kulkarni
+Description : 19. Create a FIFO file by
+b. mkfifo command
+Date: 21st Sept, 2024.
+============================================================================
+*/
+
+
+
+
+
+
 #include <stdio.h>
 #include <stdlib.h>
 
