@@ -23,46 +23,46 @@ Date: 20th Sept, 2024.
 
 int main(){
 
-        struct msqid_ds mq_info;
+struct msqid_ds mq_info;
 
-	int key=ftok(".",12);
-        if(key==-1){
-                perror("Error in generating the Key\n");
-                return 1;
-        }
+int key=ftok(".",12);
+if(key==-1){
+perror("Error in generating the Key\n");
+return 1;
+}
 
-        int msg_id=msgget(key,IPC_CREAT|0744);
-        if(msg_id==-1){
-                perror("Error in generating the Message Queue id\n");
-                return 1;
-        }
+int msg_id=msgget(key,IPC_CREAT|0744);
+if(msg_id==-1){
+perror("Error in generating the Message Queue id\n");
+return 1;
+}
 
-	if(msgctl(msg_id,IPC_STAT,&mq_info)==-1){
-		perror("Error in retieving Message Queue information");
-		return 1;
-	}
+if(msgctl(msg_id,IPC_STAT,&mq_info)==-1){
+perror("Error in retieving Message Queue information");
+return 1;
+}
 
-	printf("Access Permission: %o\n", mq_info.msg_perm.mode);
+printf("Access Permission: %o\n", mq_info.msg_perm.mode);
 
-	printf("UID: %d, GID: %d\n", mq_info.msg_perm.uid, mq_info.msg_perm.gid); 
+printf("UID: %d, GID: %d\n", mq_info.msg_perm.uid, mq_info.msg_perm.gid); 
 
-	printf("Time of last message sent: %s", ctime(&mq_info.msg_stime));
+printf("Time of last message sent: %s", ctime(&mq_info.msg_stime));
 
-	printf("Time of last message received: %s", ctime(&mq_info.msg_rtime));
+printf("Time of last message received: %s", ctime(&mq_info.msg_rtime));
 
-	printf("Time of last change in the message queue: %s", ctime(&mq_info.msg_ctime));
+printf("Time of last change in the message queue: %s", ctime(&mq_info.msg_ctime));
 
-	printf("Size of the queue: %ld bytes\n", mq_info.__msg_cbytes);
+printf("Size of the queue: %ld bytes\n", mq_info.__msg_cbytes);
 
-	printf("Number of messages in the queue: %ld\n", mq_info.msg_qnum); 
+printf("Number of messages in the queue: %ld\n", mq_info.msg_qnum); 
 
-	printf("Maximum number of bytes allowed in the queue: %ld\n", mq_info.msg_qbytes);
+printf("Maximum number of bytes allowed in the queue: %ld\n", mq_info.msg_qbytes);
 
-   	printf("PID of last msgsnd: %d\n", mq_info.msg_lspid);
+printf("PID of last msgsnd: %d\n", mq_info.msg_lspid);
 
-    	printf("PID of last msgrcv: %d\n", mq_info.msg_lrpid);
+printf("PID of last msgrcv: %d\n", mq_info.msg_lrpid);
 
-        return 0;
+return 0;
 
 }
 

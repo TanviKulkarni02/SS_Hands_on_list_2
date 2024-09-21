@@ -10,9 +10,6 @@ Date: 20th Sept, 2024.
 */
 
 
-
-
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <signal.h>
@@ -20,25 +17,21 @@ Date: 20th Sept, 2024.
 
 
 void handleSigstop(int signum) {
-    printf(" catch SIGSTOP\n");
+printf(" catch SIGSTOP\n");
 }
 
 int main() {
-    
 
-    
-  
-    if (signal(SIGSTOP, handleSigstop) == SIG_ERR) {
-        printf("Can't catch SIGSTOP.\n");
-    }
+if (signal(SIGSTOP, handleSigstop) == SIG_ERR) {
+printf("Can't catch SIGSTOP.\n");
+}
 
-    printf("Process PID: %d is running..\n", getpid());
-    
-    
-    while (1) {
-        printf("Running...%d\n",getpid());
-        sleep(3);
-    }
+printf("Process PID: %d is running..\n", getpid());
+
+while (1) {
+printf("Running...%d\n",getpid());
+sleep(3);
+}
 
     return 0;
 }

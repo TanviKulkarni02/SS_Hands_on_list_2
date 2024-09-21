@@ -20,18 +20,18 @@ Date: 21st Sept, 2024.
 
 void main()
 {
-    long maxFiles;   // Maximum number of files that can be opened within process
-    long sizeOfPipe; // The maximim size of a FIFO file
+long maxFiles;   // Maximum number of files that can be opened within process
+long sizeOfPipe; // The maximim size of a FIFO file
 
-    char *s = "23_fifo";
-    mkfifo(s, S_IRWXU);
+char *s = "23_fifo";
+mkfifo(s, S_IRWXU);
 
-    maxFiles = sysconf(_SC_OPEN_MAX);
+maxFiles = sysconf(_SC_OPEN_MAX);
 
-    printf("Maximum number of files that can be opened is: %ld\n", maxFiles);
+printf("Maximum number of files that can be opened is: %ld\n", maxFiles);
 
-    // sizeOfPipe = pathconf(s, _PC_PIPE_BUF); //for size of fifo file 's' buffer
+// sizeOfPipe = pathconf(s, _PC_PIPE_BUF); //for size of fifo file 's' buffer
 
-    rintf("Maximum size of pipe: %d\n", PIPE_BUF);
-    
+rintf("Maximum size of pipe: %d\n", PIPE_BUF);
+
 }

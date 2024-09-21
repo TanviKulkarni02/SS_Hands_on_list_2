@@ -19,24 +19,26 @@ Date : 20th Sept , 2024
 #include <sys/types.h>
 
 int main() {
-    pid_t pid = fork();
+int pid = fork();
 
-    if (pid == 0) {
+if (pid == 0) {
 
-        printf("Child process %d\n", getpid());
-        printf("Sending SIGKILL to parent %d \n", getppid());
-        kill(getppid(), SIGKILL);
+printf("Child process %d\n", getpid());
+printf("Sending SIGKILL to parent %d \n", getppid());
+kill(getppid(), SIGKILL);
 
-       sleep(5);
+sleep(5);
 
-        printf("Child process %d is now orphan, parent pid is %d\n", getpid(),getppid());
+printf("Child process %d is now orphan, parent pid is %d\n", getpid(),getppid());
 
-    } else {
-        printf("Parent  %d is alive. Waiting for signal from child...\n", getpid());
-        sleep(10);
-    }
+}
+else
+{
+printf("Parent  %d is alive. Waiting for signal from child...\n", getpid());
+sleep(10);
+}
 
-    return 0;
+return 0;
 }
 
 

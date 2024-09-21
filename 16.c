@@ -19,70 +19,70 @@ Date: 20st Sept, 2024.
 
 int main()
 {
-    int pipefd[2], a[2], l;
-    pid_t cpid;
-    char buf;
-    char *s;
-    long int size = 50;
-    s = (char *)malloc(size);
-    if (pipe(pipefd) == -1)
-    {
-        perror("pipe pipefd");
-        exit(EXIT_FAILURE);
-    }
+int pipefd[2], a[2], l;
+pid_t cpid;
+char buf;
+char *s;
+long int size = 50;
+s = (char *)malloc(size);
+if (pipe(pipefd) == -1)
+{
+perror("pipe pipefd");
+exit(EXIT_FAILURE);
+}
 
-    if (pipe(a) == -1)
-    {
-        perror("pipe a");
-        exit(EXIT_FAILURE);
-    }
+if (pipe(a) == -1)
+{
+perror("pipe a");
+exit(EXIT_FAILURE);
+}
 
-    cpid = fork();
-    if (cpid == -1)
-    {
-        perror("fork");
-        exit(EXIT_FAILURE);
-    }
+cpid = fork();
+if (cpid == -1)
+{
+perror("fork");
+exit(EXIT_FAILURE);
+}
 
-    if (cpid == 0)
-    { // chile write in pipe
-        sleep(5);
-        printf("writing in pipe from child process\n");
-        l = getline(&s, &size, stdin);
-        close(a[0]); /* Close unused read end */
-        write(a[1], s, l);
-        close(a[1]); /* closing writing end so Reader will see EOF */
+if (cpid == 0)
+{ // chile write in pipe
+sleep(5);
+printf("writing in pipe from child process\n");
+l = getline(&s, &size, stdin);
+close(a[0]); /* Close unused read end */
+write(a[1], s, l);
+close(a[1]); /* closing writing end so Reader will see EOF */
 
-        /* Child reads from pipe */
-        sleep(5);
-        close(pipefd[1]); /* Close unused write end */
-        // display from kernal using pipes reading end in child
-        printf("display in child \n");
-        while (read(pipefd[0], &buf, 1) > 0)
-            write(1, &buf, 1);
+/* Child reads from pipe */
+sleep(5);
+close(pipefd[1]); /* Close unused write end */
+// display from kernal using pipes reading end in child
+printf("display in child \n");
+while (read(pipefd[0], &buf, 1) > 0)
+write(1, &buf, 1);
 
-        write(1, "\n", 1);
-        close(pipefd[0]); /* Close unused read end */
-    }
-    else
-    { /* Parent writes argv[1](message) to pipe */
+write(1, "\n", 1);
+close(pipefd[0]); /* Close unused read end */
+}
+else
+{ /* Parent writes argv[1](message) to pipe */
 
-        printf("writing in pipe from parent process\n");
-        l = getline(&s, &size, stdin);
-        close(pipefd[0]); /* Close unused read end */
-        write(pipefd[1], s, l);
-        close(pipefd[1]); /*closing writing end so  Reader will see EOF */
+printf("writing in pipe from parent process\n");
+l = getline(&s, &size, stdin);
+close(pipefd[0]); /* Close unused read end */
+write(pipefd[1], s, l);
+close(pipefd[1]); /*closing writing end so  Reader will see EOF */
 
-        /* Child reads from pipe */
-        sleep(5);
-        close(a[1]); /* Close unused write end */
-        // display from kernal using pipes reading end in child
-        printf("display in parent \n");
-        while (read(a[0], &buf, 1) > 0)
-            write(1, &buf, 1);
-        write(1, "\n", 1);
-        close(a[0]); /* Close unused read end */
+/* Child reads from pipe */
+sleep(5);
+close(a[1]); /* Close unused write end */
+// display from kernal using pipes reading end in child
+printf("display in parent \n");
+while (read(a[0], &buf, 1) > 0)
+write(1, &buf, 1);
+write(1, "\n", 1);
+close(a[0]); /* Close unused read end */
 
-        wait(0); /* Wait for child */
-    }
+wait(0); /* Wait for child */
+}
 }

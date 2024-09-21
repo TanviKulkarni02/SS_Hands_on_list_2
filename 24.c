@@ -14,24 +14,24 @@ Date: 20th Sept, 2024.
 
 int main(){
 
-	int key=ftok(".",12);
-	if(key==-1){
-		perror("Error in generating the Key\n");
-		return 1;
-	}
+int key=ftok(".",12);
+if(key==-1){
+perror("Error in generating the Key\n");
+return 1;
+}
 
-	int msg_id=msgget(key,IPC_CREAT|0744);
-	if(msg_id==-1){
-                perror("Error in generating the Message Queue id\n");
-                return 1;
-        }
+int msg_id=msgget(key,IPC_CREAT|0744);
+if(msg_id==-1){
+perror("Error in generating the Message Queue id\n");
+return 1;
+}
 
-	printf("The Message Queue is created\n");
+printf("The Message Queue is created\n");
 
-	printf("Key:%d\n",key);
-	printf("Message Queue id:%d\n",msg_id);
+printf("Key:%d\n",key);
+printf("Message Queue id:%d\n",msg_id);
 
-	return 0;
+return 0;
 
 }
 
