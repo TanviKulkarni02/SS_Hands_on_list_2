@@ -1,6 +1,6 @@
 /*
 ============================================================================
-Name : 13.c
+Name : 13a.c
 Author : Tanvi Kulkarni
 Description : 13. Write two programs: first program is waiting to catch SIGSTOP signal, the second program
 will send the signal (using kill system call). Find out whether the first program is able to catch

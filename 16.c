@@ -1,3 +1,14 @@
+/*
+============================================================================
+Name : 16.c
+Author : Tanvi Kulkarni
+Description : 16. Write a program to send and receive data from parent to child vice versa. Use two way
+communication. 
+Date: 20st Sept, 2024.
+============================================================================
+*/
+
+
 
 #include <sys/types.h>
 #include <sys/wait.h>

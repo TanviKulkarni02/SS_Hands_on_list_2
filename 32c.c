@@ -2,8 +2,8 @@
 ============================================================================
 Name : 32c.c
 Author : Tanvi Kulkarni
-Description : Write a C, Ansi-style program to perform Record locking.
-                       a. Implement write lock
+Description : 32. Write a program to implement semaphore to protect any critical section.
+c. protect multiple pseudo resources ( may be two) using counting semaphore
 Date: 20th Sep, 2024.
 ============================================================================
 */
